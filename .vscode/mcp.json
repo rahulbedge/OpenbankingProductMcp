@@ -1,0 +1,11 @@
+{
+    "servers": [
+        {
+            "name": "echo-products",
+            "type": "stdio",
+            "command": "C:\\Program Files\\dotnet\\dotnet.exe",
+            "args": ["run"],
+            "workingDirectory": "${workspaceFolder}"
+        }
+    ]
+}
