@@ -24,8 +24,14 @@ public class Eligibility
     [JsonPropertyName("eligibilityType")]
     public string? EligibilityType { get; set; }
     
+    [JsonPropertyName("additionalValue")]
+    public string? AdditionalValue { get; set; }
+    
     [JsonPropertyName("additionalInfo")]
     public string? AdditionalInfo { get; set; }
+
+    [JsonPropertyName("additionalInfoUri")]
+    public string? AdditionalInfoUri { get; set; }
 }
 
 public class Fee
@@ -47,6 +53,192 @@ public class Fee
     
     [JsonPropertyName("transactionRate")]
     public string? TransactionRate { get; set; }
+
+    [JsonPropertyName("additionalValue")]
+    public string? AdditionalValue { get; set; }
+
+    [JsonPropertyName("discounts")]
+    public List<Discount>? Discounts { get; set; }
+
+    [JsonPropertyName("feeRate")]
+    public string? FeeRate { get; set; }
+
+    [JsonPropertyName("additionalInfoUri")]
+    public string? AdditionalInfoUri { get; set; }
+}
+
+public class Discount
+{
+    [JsonPropertyName("description")]
+    public string? Description { get; set; }
+
+    [JsonPropertyName("discountType")]
+    public string? DiscountType { get; set; }
+
+    [JsonPropertyName("amount")]
+    public string? Amount { get; set; }
+    
+    [JsonPropertyName("feeRate")]
+    public string? FeeRate { get; set; }
+
+    [JsonPropertyName("eligibility")]
+    public List<DiscountEligibility>? Eligibility { get; set; }
+
+    [JsonPropertyName("additionalValue")]
+    public string? AdditionalValue { get; set; }
+
+    [JsonPropertyName("additionalInfo")]
+    public string? AdditionalInfo { get; set; }
+
+    [JsonPropertyName("additionalInfoUri")]
+    public string? AdditionalInfoUri { get; set; }
+}
+
+public class DiscountEligibility
+{
+    [JsonPropertyName("discountEligibilityType")]
+    public string? DiscountEligibilityType { get; set; }
+
+    [JsonPropertyName("additionalValue")]
+    public string? AdditionalValue { get; set; }
+
+    [JsonPropertyName("additionalInfo")]
+    public string? AdditionalInfo { get; set; }
+
+    [JsonPropertyName("additionalInfoUri")]
+    public string? AdditionalInfoUri { get; set; }
+}
+
+public class LendingRate
+{
+    [JsonPropertyName("lendingRateType")]
+    public string? LendingRateType { get; set; }
+
+    [JsonPropertyName("rate")]
+    public string? Rate { get; set; }
+
+    [JsonPropertyName("calculationFrequency")]
+    public string? CalculationFrequency { get; set; }
+
+    [JsonPropertyName("applicationFrequency")]
+    public string? ApplicationFrequency { get; set; }
+
+    [JsonPropertyName("additionalInfo")]
+    public string? AdditionalInfo { get; set; }
+
+    [JsonPropertyName("additionalInfoUri")]
+    public string? AdditionalInfoUri { get; set; }
+
+    [JsonPropertyName("repaymentType")]
+    public string? RepaymentType { get; set; }
+
+    [JsonPropertyName("loanPurpose")]
+    public string? LoanPurpose { get; set; }
+
+    [JsonPropertyName("comparisonRate")]
+    public string? ComparisonRate { get; set; }
+
+    [JsonPropertyName("interestPaymentDue")]
+    public string? InterestPaymentDue { get; set; }
+
+    [JsonPropertyName("tiers")]
+    public List<LendingRateTier>? Tiers { get; set; }
+}
+
+public class LendingRateTier
+{
+    [JsonPropertyName("name")]
+    public string? Name { get; set; }
+
+    [JsonPropertyName("unitOfMeasure")]
+    public string? UnitOfMeasure { get; set; }
+
+    [JsonPropertyName("minimumValue")]
+    public decimal? MinimumValue { get; set; }
+
+    [JsonPropertyName("maximumValue")]
+    public decimal? MaximumValue { get; set; }
+
+    [JsonPropertyName("rateApplicationMethod")]
+    public string? RateApplicationMethod { get; set; }
+
+    [JsonPropertyName("applicabilityConditions")]
+    public ApplicabilityConditions? ApplicabilityConditions { get; set; }
+}
+
+public class ApplicabilityConditions
+{
+    [JsonPropertyName("additionalInfo")]
+    public string? AdditionalInfo { get; set; }
+
+    [JsonPropertyName("additionalInfoUri")]
+    public string? AdditionalInfoUri { get; set; }
+}
+
+public class DepositRate
+{
+    [JsonPropertyName("depositRateType")]
+    public string? DepositRateType { get; set; }
+
+    [JsonPropertyName("rate")]
+    public string? Rate { get; set; }
+
+    [JsonPropertyName("calculationFrequency")]
+    public string? CalculationFrequency { get; set; }
+
+    [JsonPropertyName("applicationFrequency")]
+    public string? ApplicationFrequency { get; set; }
+
+    [JsonPropertyName("additionalValue")]
+    public string? AdditionalValue { get; set; }
+
+    [JsonPropertyName("additionalInfo")]
+    public string? AdditionalInfo { get; set; }
+
+    [JsonPropertyName("additionalInfoUri")]
+    public string? AdditionalInfoUri { get; set; }
+
+    [JsonPropertyName("tiers")]
+    public List<DepositRateTier>? Tiers { get; set; }
+}
+
+public class DepositRateTier
+{
+    [JsonPropertyName("name")]
+    public string? Name { get; set; }
+
+    [JsonPropertyName("unitOfMeasure")]
+    public string? UnitOfMeasure { get; set; }
+
+    [JsonPropertyName("minimumValue")]
+    public decimal? MinimumValue { get; set; }
+
+    [JsonPropertyName("maximumValue")]
+    public decimal? MaximumValue { get; set; }
+
+    [JsonPropertyName("rate")]
+    public string? Rate { get; set; }
+
+    [JsonPropertyName("additionalInfo")]
+    public string? AdditionalInfo { get; set; }
+
+    [JsonPropertyName("additionalInfoUri")]
+    public string? AdditionalInfoUri { get; set; }
+}
+
+public class Constraint
+{
+    [JsonPropertyName("constraintType")]
+    public string? ConstraintType { get; set; }
+
+    [JsonPropertyName("additionalValue")]
+    public string? AdditionalValue { get; set; }
+
+    [JsonPropertyName("additionalInfo")]
+    public string? AdditionalInfo { get; set; }
+
+    [JsonPropertyName("additionalInfoUri")]
+    public string? AdditionalInfoUri { get; set; }
 }
 
 public class ProductDetails : Product
@@ -65,6 +257,18 @@ public class ProductDetails : Product
     
     [JsonPropertyName("isTailored")]
     public bool IsTailored { get; set; }
+
+    [JsonPropertyName("applicationUri")]
+    public string? ApplicationUri { get; set; }
+
+    [JsonPropertyName("lendingRates")]
+    public List<LendingRate>? LendingRates { get; set; }
+
+    [JsonPropertyName("depositRates")]
+    public List<DepositRate>? DepositRates { get; set; }
+
+    [JsonPropertyName("constraints")]
+    public List<Constraint>? Constraints { get; set; }
 }
 
 public class AdditionalInformation
