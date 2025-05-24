@@ -3,10 +3,10 @@ using System.Text.Json;
 using ModelContextProtocol.Server;
 using OpenbankingProductMcp.Services;
 
-namespace OpenbankingProductMcp;
+namespace OpenbankingProductMcp.Echos;
 
 [McpServerToolType]
-public static class EchoProduct
+public sealed class EchoProduct
 {
     [McpServerTool, Description("Get all cba products.")]
     public static async Task<string> GetAllCbaProducts(CbaProductsService cbaProductsService)

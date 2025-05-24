@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "cba-products": {
+      "url": "http://localhost:5000/sse",
+      "disabled": false,
+      "alwaysAllow": [
+        "GetAllCbaProducts",
+        "GetCbaProductDetails"
+      ]
+    }
+  }
+}
